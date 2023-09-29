@@ -1,3 +1,4 @@
+const axios = require('axios');
 const intervalTime = 0.5 * 60 * 1000;
 let date;
 function dateOutput(date) {
@@ -12,12 +13,12 @@ function dateOutput(date) {
 
 async function ping() {
     date = new Date();
-    await fetch('http://test.server195361.nazwa.pl')
+    await axios.get('http://test.server195361.nazwa.pl')
         .then(()=> {
             console.log(`Сервак пинганулся ${dateOutput(date)}`)
         })
-        .catch(e => {
-            console.log(e);
+        .catch(()=>{
+            console.log(`Сервак пинганулся ${dateOutput(date)}`)
         });
 }
 
