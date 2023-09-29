@@ -18,8 +18,8 @@ function dateOutput(date) {
 setInterval(()=>{
     date = new Date();
     fetch('http://test.server195361.nazwa.pl')
-        .then(data=> {
-            console.log(`Сервак пинганулся ${dateOutput(date)}`);
+        .then(()=> {
+            console.log(`Сервак пинганулся ${dateOutput(date)}`)
         })
         .catch(e =>{
             console.log(e);
